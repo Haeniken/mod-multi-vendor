@@ -30,6 +30,7 @@
 #include "Player.h"
 #include "ScriptMgr.h"
 #include "ScriptedGossip.h"
+#include "Chat.h"
 
 
 /*-- DATA NPC_TEMPLATE
@@ -86,9 +87,11 @@ public:
     bool OnGossipHello(Player* player, Creature* creature) override
     { 
         if (creature->IsVendor())
+        {
             AddGossipItemFor(player, GOSSIP_ICON_VENDOR, GOSSIP_TEXT_BROWSE_WEAPONS_277_284, GOSSIP_ACTION_TRADE, 1);
             AddGossipItemFor(player, GOSSIP_ICON_VENDOR, GOSSIP_TEXT_BROWSE_ARMOR_277_284, GOSSIP_ACTION_TRADE, 2);
             AddGossipItemFor(player, GOSSIP_ICON_VENDOR, GOSSIP_TEXT_BROWSE_ACCESSORIES_277_284, GOSSIP_ACTION_TRADE, 3);
+        }
 
         SendGossipMenuFor(player, player->GetGossipTextId(creature), creature->GetGUID());
         return true;
@@ -105,7 +108,7 @@ public:
             if (player->IsInCombat())
             {
                 CloseGossipMenuFor(player);
-                player->GetSession()->SendNotification("You are in combat!");
+                ChatHandler(player->GetSession()).SendNotification("You are in combat!");
                 return false;
             }
             else if (player->getClassMask())
@@ -118,7 +121,7 @@ public:
              if (player->IsInCombat())
              {
                  CloseGossipMenuFor(player);
-                 player->GetSession()->SendNotification("You are in combat!");
+                 ChatHandler(player->GetSession()).SendNotification("You are in combat!");
                  return false;
              }
              else if (player->getClassMask())
@@ -131,7 +134,7 @@ public:
              if (player->IsInCombat())
              {
                  CloseGossipMenuFor(player);
-                 player->GetSession()->SendNotification("You are in combat!");
+                 ChatHandler(player->GetSession()).SendNotification("You are in combat!");
                  return false;
              }
              else if (player->getClassMask())
@@ -152,9 +155,11 @@ public:
     bool OnGossipHello(Player* player, Creature* creature) override
     { 
         if (creature->IsVendor())
+        {
             AddGossipItemFor(player, GOSSIP_ICON_VENDOR, GOSSIP_TEXT_BROWSE_WEAPONS_264, GOSSIP_ACTION_TRADE, 1);
             AddGossipItemFor(player, GOSSIP_ICON_VENDOR, GOSSIP_TEXT_BROWSE_ARMOR_264, GOSSIP_ACTION_TRADE, 2);
             AddGossipItemFor(player, GOSSIP_ICON_VENDOR, GOSSIP_TEXT_BROWSE_ACCESSORIES_264, GOSSIP_ACTION_TRADE, 3);
+        }
 
         SendGossipMenuFor(player, player->GetGossipTextId(creature), creature->GetGUID());
         return true;
@@ -171,7 +176,7 @@ public:
             if (player->IsInCombat())
             {
                 CloseGossipMenuFor(player);
-                player->GetSession()->SendNotification("You are in combat!");
+                ChatHandler(player->GetSession()).SendNotification("You are in combat!");
                 return false;
             }
             else if (player->getClassMask())
@@ -184,7 +189,7 @@ public:
              if (player->IsInCombat())
              {
                  CloseGossipMenuFor(player);
-                 player->GetSession()->SendNotification("You are in combat!");
+                 ChatHandler(player->GetSession()).SendNotification("You are in combat!");
                  return false;
              }
              else if (player->getClassMask())
@@ -197,7 +202,7 @@ public:
              if (player->IsInCombat())
              {
                  CloseGossipMenuFor(player);
-                 player->GetSession()->SendNotification("You are in combat!");
+                 ChatHandler(player->GetSession()).SendNotification("You are in combat!");
                  return false;
              }
              else if (player->getClassMask())
@@ -219,9 +224,11 @@ public:
     bool OnGossipHello(Player* player, Creature* creature) override
     { 
         if (creature->IsVendor())
+        {
             AddGossipItemFor(player, GOSSIP_ICON_VENDOR, GOSSIP_TEXT_BROWSE_WEAPONS_245, GOSSIP_ACTION_TRADE, 1);
             AddGossipItemFor(player, GOSSIP_ICON_VENDOR, GOSSIP_TEXT_BROWSE_ARMOR_245, GOSSIP_ACTION_TRADE, 2);
             AddGossipItemFor(player, GOSSIP_ICON_VENDOR, GOSSIP_TEXT_BROWSE_ACCESSORIES_245, GOSSIP_ACTION_TRADE, 3);
+        }
 
         SendGossipMenuFor(player, player->GetGossipTextId(creature), creature->GetGUID());
         return true;
@@ -238,7 +245,7 @@ public:
             if (player->IsInCombat())
             {
                 CloseGossipMenuFor(player);
-                player->GetSession()->SendNotification("You are in combat!");
+                ChatHandler(player->GetSession()).SendNotification("You are in combat!");
                 return false;
             }
             else if (player->getClassMask())
@@ -251,7 +258,7 @@ public:
              if (player->IsInCombat())
              {
                  CloseGossipMenuFor(player);
-                 player->GetSession()->SendNotification("You are in combat!");
+                 ChatHandler(player->GetSession()).SendNotification("You are in combat!");
                  return false;
              }
              else if (player->getClassMask())
@@ -264,7 +271,7 @@ public:
              if (player->IsInCombat())
              {
                  CloseGossipMenuFor(player);
-                 player->GetSession()->SendNotification("You are in combat!");
+                 ChatHandler(player->GetSession()).SendNotification("You are in combat!");
                  return false;
              }
              else if (player->getClassMask())
