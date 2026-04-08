@@ -34,6 +34,16 @@
 #include "DatabaseEnv.h"
 #include "Common.h"
 
+namespace
+{
+    char constexpr MODULE_NAME[] = "mod-multi-vendor";
+
+    enum ModuleStringIds : uint32
+    {
+        STRING_ID_IN_COMBAT = 1
+    };
+}
+
 class npc_multi_vendor_dynamic : public CreatureScript
 {
 public:
@@ -116,7 +126,7 @@ public:
 
         if (player->IsInCombat())
         {
-            ChatHandler(player->GetSession()).SendNotification("You are in combat!");
+            ChatHandler(player->GetSession()).PSendModuleSysMessage(MODULE_NAME, STRING_ID_IN_COMBAT);
             return false;
         }
 
